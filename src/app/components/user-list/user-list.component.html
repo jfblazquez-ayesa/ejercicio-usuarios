@@ -1,0 +1,38 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Crear / editar contacto</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table striped">
+        <thead>
+          <tr>
+  
+            <th>id</th>
+            <th>Nombre</th>
+            <th>email</th>
+            <th>Puesto</th>
+            <th>Teléfono</th>
+            <th>Edad</th>
+            <th>Activo</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of users">
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.position }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.age }}</td>
+            <td>{{ contact.isActive }}</td>
+            <td>
+              <button class= "btn btn-warning glyphicon glyphicon-pencil" (click)="editUser(contact)"></button>
+              <button class= "btn btn-primary glyphicon glyphicon-eye-open" #deleteButton (click)="viewUser(contact, deleteButton)"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
